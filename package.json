@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/L1lith/PackEnv/issues"
   },
-  "homepage": "https://github.com/L1lith/PackEnv#readme"
+  "homepage": "https://github.com/L1lith/PackEnv#readme",
+  "dependencies": {
+    "webpack-merge": "^4.1.3"
+  }
 }
