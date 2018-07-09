@@ -1,10 +1,5 @@
 const merge = require('webpack-merge')
 
-const common = require("./webpack.common.js")
-process.env.NODE_ENV = process.env.NODE_ENV || "development"
-const environment = require(`./webpack.${process.env.NODE_ENV}.js`)
-
-
 function packEnvironments(configuration, warnings=true) {
   const environment = process.env.NODE_ENV
   if (typeof environment !== 'string') throw new Error('Node Missing Environment')
