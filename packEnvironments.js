@@ -6,7 +6,7 @@ function packEnvironments(configuration, options={}) {
   const {warnings=true} = options
   let environment = process.env.NODE_ENV
   if (typeof environment != 'string') {
-    if (warnings === true) console.warn('Node Missing Environment, Assuming Development')
+    if (warnings === true) console.warn('PackEnv: Node Missing Environment, Assuming Development')
     environment = "development"
   }
   if (environment === 'common') throw new Error('Node Environment cannot be "common"')
@@ -25,7 +25,7 @@ function packEnvironments(configuration, options={}) {
   if (configuration.hasOwnProperty(environment)) {
     outputConfiguration = merge(outputConfiguration, configuration[environment])
   } else if (warnings === true) {
-    console.warn('There is no configuration for your environment.')
+    console.warn('PackEnv: There is no configuration for your environment.')
   }
   return outputConfiguration
 }
