@@ -4,7 +4,7 @@ const autoRequire = require('./autoRequire')
 
 function interpretOptions(arg1, ...args) {
   if (arguments.length < 1) {
-    return [autoRequire(dirname(require.main.filename)), ...args]
+    return [autoRequire(process.cwd()), ...args]
   } else if (typeof arg1 == 'string' && arg1.length > 0) {
     try {
       if (!lstatSync(arg1).isDirectory()) throw new Error('Path is not a directory')

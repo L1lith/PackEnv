@@ -1,6 +1,6 @@
 {
   "name": "packenv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple package to easily setup environment based configuration with webpack.",
   "main": "index.js",
   "scripts": {
