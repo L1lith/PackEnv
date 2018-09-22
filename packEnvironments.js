@@ -1,9 +1,12 @@
 const merge = require('webpack-merge')
 
-function packEnvironments(configuration, warnings=true) {
+function packEnvironments(configuration, options={}) {
+  if (options === null) options = {}
+  if (typeof options != 'object') throw new Error("Options Must Be an Object.")
+  const {warnings=true} = options
   let environment = process.env.NODE_ENV
   if (typeof environment != 'string') {
-    console.warn('Node Missing Environment, Assuming Development')
+    if (warnings === true) console.warn('Node Missing Environment, Assuming Development')
     environment = "development"
   }
   if (environment === 'common') throw new Error('Node Environment cannot be "common"')

@@ -1,7 +1,7 @@
 const {readdirSync} = require('fs')
 const {join} = require('path')
 
-const configurationRegex = /^webpack\.([^.]+)(?=\.js$)/
+const configurationRegex = /^webpack\.([^.\/]+)(?=\.js$)/
 
 function autoRequire(directory) {
   const output = {}
