@@ -13,10 +13,6 @@ function packEnvironments(configuration, options={}) {
   if (typeof configuration != 'object' || configuration === null) throw new Error('Configuration type invalid')
   const entries = Object.entries(configuration)
 
-  if (entries.length < 1 && warnings === true) {
-    console.warn('No configuration options!')
-  }
-
   entries.forEach(([key, value]) => {
     if (typeof value != 'object' || value === null) throw new Error(`Configuration option "${key}"`)
   })
